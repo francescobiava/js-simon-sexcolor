@@ -2,7 +2,7 @@
 // Dopo 30 secondi l’utente deve inserire un prompt alla volta i numeri che ha visto precedentemente. Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati;
 
 // variabili
-var numRandom, userNum;
+var i, numRandom, userNum;
 var numbers = [];
 var result = [];
 
