@@ -2,7 +2,7 @@
 // Dopo 30 secondi l’utente deve inserire un prompt alla volta i numeri che ha visto precedentemente. Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati;
 
 // variabili
-var i, numRandom, userNum;
+var i, j, numRandom, userNum;
 var numbers = [];
 var result = [];
 
@@ -21,7 +21,7 @@ console.log(numbers);
 alert('Memorizza questi 5 numeri e quando sei pronto premi OK\n' + numbers);
 
 // function
-setTimeout(check, 30000);
+setTimeout(check, 1000);
 
 // dichiarazione functions
 function check() {
@@ -31,7 +31,10 @@ function check() {
       result.push(userNum);
     }
   }
-  return console.log('Hai indovinato ', result.length, ' numeri', result);
+  document.getElementById('js-score').innerHTML = result.length;
+  for (j = 0; j < result.length; j++) {
+    document.getElementById('js-result').innerHTML += '<li>' + result[j] + '</li>';
+  }
 }
 
 function getRndInteger(min, max) {
